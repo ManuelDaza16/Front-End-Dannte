@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo Indicadores</title>
+    <!-- Bootstrap CSS -->
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <!-- MDI Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+    <!-- Tabulator -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.2.5/css/tabulator_bootstrap5.min.css"
+        integrity="sha512-qDEgvDbdp7tq+ytU/OgCzWfvbfdEe3pv0yEOMz/gurMcR0BWNgIF6I4VKeoACEj5E5PFf1uo3Vzuwk/ga9zeUg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/componets.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar gradient-dark">
+            <div class="text-center py-1">
+                <!-- Logo -->
+                <a href="index.html"><i class="mdi mdi-hexagon-outline mdi-36px text-light"></i></a>
+            </div>
+            <ul class="sidebar-nav mt-1">
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-gauge"></i>
+                        <span>Indicadores</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-earth"></i>
+                        <span>Geodatos</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-chart-pie"></i>
+                        <span>Simulación</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="calendar.html" class="sidebar-link">
+                        <i class="mdi mdi-calendar-check"></i>
+                        <span>Planeador</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="./profile.html" class="sidebar-link">
+                        <i class="mdi mdi-account-circle"></i>
+                        <span>Mi Cuenta</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="RegisterUsers.html" class="sidebar-link">
+                        <i class="mdi mdi-account-group"></i>
+                        <span>Usuarios</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-cog-outline"></i>
+                        <span>Configuraciones</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main content -->
+        <div class="main">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-0">
+                <div class="container-fluid">
+                    <!-- Sidebar Toggle Button -->
+                    <div class="toggle-btn" type="button">
+                        <i class="mdi mdi-menu"></i>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <!-- Dropdown de Administrador -->
+                        <div class="dropdown">
+                            <a class="btn dropdown-toggle d-flex align-items-center" href="#" role="button"
+                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="me-2">Administrador</span>
+                                <i class="mdi mdi-account-circle mdi-36px"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid p-5">
+                <!-- Menú de opciones de planner -->
+                <div class="row p-3 gradient-dark">
+                    <div class="col-4">
+                        <h2 class="text-light">Análisis de actividades</h2>
+                    </div>
+                    <div class="col-8">
+                        <div class="d-flex justify-content-end">
+                            <a href="./calendar.html" class="btn btn-info me-2">Volver</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-12 p-0">
+                        <div class="card shadow">
+                            <div class="card-header gradient-secondary">
+                                <h3 class="text-light d-flex justify-content-end align-content-center">Analis total
+                                </h3>
+                            </div>
+                            <div class="card-body">
+
+                                <div id="activities-table" class="mt-3 table-bordered"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 p-0">
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <div class="card shadow">
+                                    <div class="card-header gradient-secondary">
+                                        <h3 class="text-light">Análisis por tipo de actividad
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- Tablas adicionales -->
+                                        <div class="container">
+                                            <div id="deposit-table"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="card shadow">
+                                    <div class="card-header gradient-secondary">
+                                        <h3 class="text-light">Análisis por región
+                                        </h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="region-table"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tabulator -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/6.2.5/js/tabulator.min.js"
+        integrity="sha512-orG5sHJgUiyGjeUBBK56+piLmrCEP7r5Tz9efhJ/C7F1Hdi8O33gQxqZThRb/PSAg9T5seRewR2pw5lTaZPTMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/summaryActivities.js"></script>
+    <script src="./assets/js/menu.js"></script>
+</body>
+
+</html>

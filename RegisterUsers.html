@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+    <!-- Tabulator Bootstrap CSS -->
+    <link href="https://unpkg.com/tabulator-tables@5.4.4/dist/css/tabulator_bootstrap5.min.css" rel="stylesheet">
+    <!--Virtual select-->
+    <link rel="stylesheet" href="./assets/css/virtual-select.css">
+    <link rel="stylesheet" href="./assets/css/componets.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar gradient-dark">
+            <div class="text-center py-1">
+                <!-- Logo -->
+                <a href="index.html"><i class="mdi mdi-hexagon-outline mdi-36px text-light"></i></a>
+            </div>
+            <ul class="sidebar-nav mt-1">
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-gauge"></i>
+                        <span>Indicadores</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-earth"></i>
+                        <span>Geodatos</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-chart-pie"></i>
+                        <span>Simulación</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="calendar.html" class="sidebar-link">
+                        <i class="mdi mdi-calendar-check"></i>
+                        <span>Planeador</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="./profile.html" class="sidebar-link">
+                        <i class="mdi mdi-account-circle"></i>
+                        <span>Mi Cuenta</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="RegisterUsers.html" class="sidebar-link active">
+                        <i class="mdi mdi-account-group"></i>
+                        <span>Usuarios</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-cog-outline"></i>
+                        <span>Configuraciones</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main content -->
+        <div class="main">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-0">
+                <div class="container-fluid">
+                    <!-- Sidebar Toggle Button -->
+                    <div class="toggle-btn" type="button">
+                        <i class="mdi mdi-menu"></i>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <!-- Dropdown de Administrador -->
+                        <div class="dropdown">
+                            <a class="btn dropdown-toggle d-flex align-items-center" href="#" role="button"
+                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="me-2">Administrador</span>
+                                <i class="mdi mdi-account-circle mdi-36px"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid p-5">
+                <div class="row p-3 gradient-primary">
+                    <div class="col-4">
+                        <h2 class="text-light">Gestión de Usuarios</h2>
+                    </div>
+                    <div class="col-8">
+                        <div class="d-flex justify-content-end">
+                            <button id="viewTable" class="btn btn-info me-2"><i class="mdi mdi-eye"></i>
+                                Ver</button>
+                            <button id="createUser" class="btn btn-outline-info"><i class="mdi mdi-plus"></i> Crear</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <!-- Tabla de Usuarios -->
+                    <div id="sectionTable" class="col-12">
+                        <div id="userTable"></div>
+                    </div>
+
+                    <!-- Formulario de Usuario (Oculto al principio) -->
+                    <div id="sectionForm" class="d-none">
+                        <div class="row">
+                            <!-- Columna izquierda: Subir foto -->
+                            <div class="col-md-4">
+                                <div class="card mb-4">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Foto de perfil</h5>
+                                        <img src="https://img.freepik.com/psd-gratis/ilustracion-3d-avatar-o-perfil-humano_23-2150671118.jpg?t=st=1726111883~exp=1726115483~hmac=c09f314a0ce7f3311068613299b4f47b80684b7612756d15d5ecb5f9769523d6&w=740"
+                                            class="rounded-circle mb-3" alt="foto perfil" id="profileImage" width="150"
+                                            height="150">
+                                        <p class="text-muted">JPG o PNG no mayor a 5MB</p>
+                                        <!-- Ocultar el input de archivo nativo -->
+                                        <input type="file" class="form-control d-none" id="uploadImage"
+                                            accept="image/*">
+                                        <button id="uploadImageBtn" class="btn btn-primary mt-3"><i
+                                                class="mdi mdi-camera-plus"></i></button>
+                                        <button id="deleteImageBtn" class="btn btn-secondary mt-3"
+                                            data-bs-toggle="modal" data-bs-target="#modalDeletePhoto"><i
+                                                class="mdi mdi-trash-can-outline"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Columna derecha: Información de usuario -->
+                            <div class="col-md-8">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-primary">Detalles de la cuenta</h5>
+                                        <form id="userForm">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <label for="firstName" class="form-label">Nombres</label>
+                                                    <input type="text" class="form-control" id="firstName"
+                                                        placeholder="Ingresa el primer nombre">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="lastName" class="form-label">Apelidos</label>
+                                                    <input type="text" class="form-control" id="lastName"
+                                                        placeholder="Ingresa el primer apellido">
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <label for="position" class="form-label">Cargo</label>
+                                                    <input type="text" class="form-control" id="position"
+                                                        placeholder="Ingresa el cargo">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="role" class="form-label">Rol</label>
+                                                    <select id="role" class="form-select">
+                                                        <option value="Admin">Admin</option>
+                                                        <option value="essa">ESSA</option>
+                                                        <option value="contratista">Contratista</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <label for="email" class="form-label">Correo</label>
+                                                    <input type="email" class="form-control" id="email"
+                                                        placeholder="Ingresa el correo electrónico">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="contract" class="form-label">Número de
+                                                        Contrato</label>
+                                                    <input type="text" class="form-control" id="contract"
+                                                        placeholder="Ingresa el número de contrato" disabled>
+                                                    <!-- Deshabilitado por defecto -->
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <label for="region" class="form-label">Región</label>
+                                                    <!-- Aquí reemplazamos el select estándar por Virtual Select -->
+                                                    <div id="region"></div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="company" class="form-label">Empresa</label>
+                                                    <select id="company" class="form-select">
+                                                        <option value="ESSA" selected>ESSA</option>
+                                                        <option value="agregar">Agregar Empresa</option>
+                                                    </select>
+                                                    <input type="text" class="form-control mt-2 d-none"
+                                                        id="customCompany"
+                                                        placeholder="Escribe el nombre de la empresa">
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <label for="state" class="form-label">Estado</label>
+                                                    <select id="state" class="form-select">
+                                                        <option value="Activo">Activo</option>
+                                                        <option value="Inactivo">Inactivo</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="phone" class="form-label">Telefono</label>
+                                                    <input type="text" class="form-control" id="phone"
+                                                        placeholder="Ingresa el telefono">
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <label for="password" class="form-label">Contraseña</label>
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control" id="password"
+                                                            placeholder="Ingresa la contraseña">
+                                                        <button class="btn btn-outline" type="button"
+                                                            id="togglePassword">
+                                                            <i class="mdi mdi-eye-off" id="passwordIcon"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Eliminar Foto -->
+    <div class="modal fade" id="modalDeletePhoto" tabindex="-1" aria-labelledby="modalDeletePhotoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDeletePhotoLabel">Eliminar Foto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar esta foto de perfil?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary text-white" id="confirmDeletePhoto">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Eliminar Usuario -->
+    <div class="modal fade" id="modalDeleteUser" tabindex="-1" aria-labelledby="modalDeleteUserLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDeleteUserLabel">Eliminar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar este usuario?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="confirmDeleteUser">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Editar Usuario -->
+    <div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="modalEditLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEditLabel">Editar Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editFirstName" class="form-label">Nombres</label>
+                                <input type="text" class="form-control" id="editFirstName"
+                                    placeholder="Ingresa el primer nombre">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editLastName" class="form-label">Apellidos</label>
+                                <input type="text" class="form-control" id="editLastName"
+                                    placeholder="Ingresa el primer apellido">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editPosition" class="form-label">Cargo</label>
+                                <input type="text" class="form-control" id="editPosition"
+                                    placeholder="Ingresa el cargo">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editRole" class="form-label">Rol</label>
+                                <select id="editRole" class="form-select">
+                                    <option value="Admin">Admin</option>
+                                    <option value="Usuario">Usuario</option>
+                                    <option value="Contratista">Contratista</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editEmail" class="form-label">Correo</label>
+                                <input type="email" class="form-control" id="editEmail"
+                                    placeholder="Ingresa el correo electrónico">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editContract" class="form-label">Número de Contrato</label>
+                                <input type="text" class="form-control" id="editContract"
+                                    placeholder="Ingresa el número de contrato" disabled>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="region" class="form-label">Región</label>
+                                <!-- Aquí reemplazamos el select estándar por Virtual Select -->
+                                <div id="region"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editCompany" class="form-label">Empresa</label>
+                                <select id="editCompany" class="form-select">
+                                    <option value="ESSA" selected>ESSA</option>
+                                    <option value="agregar">Agregar Empresa</option>
+                                </select>
+                                <input type="text" class="form-control mt-2 d-none" id="customCompanyEdit"
+                                    placeholder="Escribe el nombre de la empresa">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editState" class="form-label">Estado</label>
+                                <select id="editState" class="form-select">
+                                    <option value="Activo">Activo</option>
+                                    <option value="Inactivo">Inactivo</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="editPhone" class="form-label">Telefono</label>
+                                <input type="text" class="form-control" id="editPhone"
+                                    placeholder="Ingresa el Telefono">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="editPassword" class="form-label">Contraseña</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="editPassword"
+                                        placeholder="Ingresa la contraseña">
+                                    <button class="btn btn-outline" type="button" id="toggleEditPassword">
+                                        <i class="mdi mdi-eye-off" id="editPasswordIcon"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Tabulator js -->
+    <script src="https://cdn.jsdelivr.net/npm/tabulator-tables@5.3.4/dist/js/tabulator.min.js"></script>
+    <!-- Virtual Select Js -->
+    <script src="https://cdn.jsdelivr.net/npm/virtual-select-plugin@1.0.45/dist/virtual-select.min.js"></script>
+    <script src="./assets/js/registerUser.js"></script>
+    <script src="./assets/js/menu.js"></script>
+</body>
+
+</html>

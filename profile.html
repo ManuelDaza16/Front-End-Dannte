@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/componets.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar gradient-dark">
+            <div class="text-center py-1">
+                <!-- Logo -->
+                <a href="index.html"><i class="mdi mdi-hexagon-outline mdi-36px text-light"></i></a>
+            </div>
+            <ul class="sidebar-nav mt-1">
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-gauge"></i>
+                        <span>Indicadores</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-earth"></i>
+                        <span>Geodatos</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-chart-pie"></i>
+                        <span>Simulación</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="calendar.html" class="sidebar-link">
+                        <i class="mdi mdi-calendar-check"></i>
+                        <span>Planeador</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="./profile.html" class="sidebar-link active">
+                        <i class="mdi mdi-account-circle"></i>
+                        <span>Mi Cuenta</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="RegisterUsers.html" class="sidebar-link">
+                        <i class="mdi mdi-account-group"></i>
+                        <span>Usuarios</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="mdi mdi-cog-outline"></i>
+                        <span>Configuraciones</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main content -->
+        <div class="main">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-0">
+                <div class="container-fluid">
+                    <!-- Sidebar Toggle Button -->
+                    <div class="toggle-btn" type="button">
+                        <i class="mdi mdi-menu"></i>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <!-- Dropdown de Administrador -->
+                        <div class="dropdown">
+                            <a class="btn dropdown-toggle d-flex align-items-center" href="#" role="button"
+                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="me-2">Administrador</span>
+                                <i class="mdi mdi-account-circle mdi-36px"></i>
+                            </a>
+
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid p-5">
+                <div class="row p-3 gradient-dark">
+                    <div class="col-4">
+                        <h1 class="text-light">Mi cuenta</>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <!-- Columna izquierda: Subir foto -->
+                    <div class="col-md-4 p-0 pe-3">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card mb-4">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title text-secondary fw-bold">Foto de perfil</h5>
+                                        <img src="https://img.freepik.com/psd-gratis/ilustracion-3d-avatar-o-perfil-humano_23-2150671122.jpg"
+                                            class="rounded-circle mb-3" alt="foto perfil" id="profileImage" width="150"
+                                            height="150">
+                                        <p class="text-muted">JPG o PNG no mayor a 5MB</p>
+                                        <input type="file" class="form-control d-none" id="uploadImage"
+                                            accept="image/*">
+                                        <button id="uploadImageBtn" class="btn btn-primary mt-3"><i
+                                                class="mdi mdi-camera-plus"></i></button>
+                                        <button id="deleteImageBtn" class="btn btn-secondary mt-3 text-white"
+                                            data-bs-toggle="modal" data-bs-target="#modalDeletePhoto"><i
+                                                class="mdi mdi-trash-can-outline"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center text-secondary fw-bold">Actualizar
+                                            Contraseña</h5>
+
+                                        <form id="updatePasswordForm">
+                                            <div class="mb-3">
+                                                <label for="currentPassword"
+                                                    class="form-label text-start d-block">Contraseña
+                                                    Actual</label>
+                                                <input type="password" class="form-control" id="currentPassword"
+                                                    placeholder="Ingrese su contraseña actual" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="newPassword" class="form-label text-start d-block">Nueva
+                                                    Contraseña</label>
+                                                <input type="password" class="form-control" id="newPassword"
+                                                    placeholder="Ingrese su nueva contraseña" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="confirmPassword"
+                                                    class="form-label text-start d-block">Confirmar
+                                                    Nueva Contraseña</label>
+                                                <input type="password" class="form-control" id="confirmPassword"
+                                                    placeholder="Confirme su nueva contraseña" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary mt-3 w-100">Actualizar
+                                                Contraseña</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha: Información de usuario -->
+                    <div class="col-md-8 p-0">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title text-secondary fw-bold">Detalles de la cuenta</h5>
+                                <form id="userForm">
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="firstName" class="form-label">Nombres</label>
+                                            <input type="text" class="form-control" id="firstName" value="Ana" disabled>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="lastName" class="form-label">Apellidos</label>
+                                            <input type="text" class="form-control" id="lastName" value="Castro"
+                                                disabled>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="email" class="form-label">Correo</label>
+                                            <input type="email" class="form-control" id="email"
+                                                value="anacastro@gmail.com" disabled>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="phone" class="form-label">Teléfono</label>
+                                            <input type="tel" class="form-control" id="phone" placeholder="312456789">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="region" class="form-label">Región</label>
+                                            <input type="text" class="form-control" id="region" value="Barbosa"
+                                                disabled>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="empresa" class="form-label">Empresa</label>
+                                            <input type="text" class="form-control" id="empresa" value="ESSA" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="state" class="form-label">Estado</label>
+                                            <input type="text" class="form-control" id="state" value="Activo" disabled>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="contract" class="form-label">Número de Contrato</label>
+                                            <input type="text" class="form-control" id="contract" value="57463"
+                                                disabled>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="password" class="form-label">Contraseña</label>
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" id="password" value="767676"
+                                                    disabled>
+                                                <button class="btn btn-outline" type="button" id="togglePassword">
+                                                    <i class="mdi mdi-eye-off" id="passwordIcon"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Eliminar Foto -->
+    <div class="modal fade" id="modalDeletePhoto" tabindex="-1" aria-labelledby="modalDeletePhotoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDeletePhotoLabel">Eliminar Foto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar esta foto de perfil?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary text-white" id="confirmDeletePhoto">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/profile.js"></script>
+</body>
+
+</html>

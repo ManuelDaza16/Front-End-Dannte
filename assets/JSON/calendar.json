@@ -1,0 +1,376 @@
+{
+    "activities": [
+        {
+            "activityCode": "ACT-001",
+            "startDate": "2024-09-12",
+            "endDate": "2024-09-14",
+            "activityType": "Mantenimiento",
+            "supports": "3101983",
+            "assets": "TRF-12345",
+            "user": {
+                "name": "Manuel",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "San Alberto",
+            "description": "Revisión de tierras y DPS en apoyo 3101983",
+            "status": "Finalizada",
+            "priority": "Alta",
+            "comments": "Requiere inspección adicional",
+            "OT": [
+                "OT-123",
+                "OT-456"
+            ],
+            "cosignation": [
+                "COS-789",
+                "COS-012"
+            ],
+            "LACmaneuvers": "LAC-001",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-09-20",
+                "note": "Actualización del sistema eléctrico completada."
+            }
+        },
+        {
+            "activityCode": "ACT-002",
+            "startDate": "2024-09-15",
+            "endDate": "2024-09-17",
+            "activityType": "Expansión y Reposición",
+            "supports": "3105678",
+            "assets": "TRF-67890",
+            "user": {
+                "name": "Sebastian",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "San Gil",
+            "description": "Instalación de sombreros chinos",
+            "status": "En ejecución",
+            "priority": "Media",
+            "comments": "Avance en un 70%",
+            "OT": [
+                "OT-789",
+                "OT-321"
+            ],
+            "cosignation": [
+                "COS-654",
+                "COS-987"
+            ],
+            "LACmaneuvers": "LAC-002",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-09-18",
+                "note": "Se completó la instalación de sombreros chinos."
+            }
+        },
+        {
+            "activityCode": "ACT-003",
+            "startDate": "2024-09-20",
+            "endDate": "2024-09-22",
+            "activityType": "Mantenimiento Equipos",
+            "supports": "3103456",
+            "assets": "TRF-34567",
+            "user": {
+                "name": "Felipe",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "Barbosa",
+            "description": "Inspección de Mantenimiento en apoyo 305/107",
+            "status": "Vencida",
+            "priority": "Alta",
+            "comments": "Problemas en el sistema de refrigeración",
+            "OT": [
+                "OT-654",
+                "OT-987"
+            ],
+            "cosignation": [
+                "COS-111",
+                "COS-222"
+            ],
+            "LACmaneuvers": "LAC-003",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-09-23",
+                "note": "El sistema de refrigeración necesita mantenimiento adicional."
+            }
+        },
+        {
+            "activityCode": "ACT-004",
+            "startDate": "2024-09-25",
+            "endDate": "2024-09-26",
+            "activityType": "Podas",
+            "supports": "3107890",
+            "assets": "TRF-89012",
+            "user": {
+                "name": "Lina",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "Socorro",
+            "description": "Podas aguas abajo del apoyo 3911381",
+            "status": "Programada",
+            "priority": "Baja",
+            "comments": "Se espera completar en el tiempo estipulado",
+            "OT": [
+                "OT-741",
+                "OT-852"
+            ],
+            "cosignation": [
+                "COS-963",
+                "COS-258"
+            ],
+            "LACmaneuvers": "LAC-004",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-09-26",
+                "note": "Las podas se realizaron sin problemas."
+            }
+        },
+        {
+            "activityCode": "ACT-005",
+            "startDate": "2024-09-28",
+            "endDate": "2024-09-29",
+            "activityType": "Mantenimiento",
+            "supports": "3112345",
+            "assets": "TRF-67891",
+            "user": {
+                "name": "Andrés",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "San Alberto",
+            "description": "Mantenimiento de líneas en sector rural",
+            "status": "Vencida en ejecución",
+            "priority": "Alta",
+            "comments": "Avance lento debido al clima",
+            "OT": [
+                "OT-963",
+                "OT-741"
+            ],
+            "cosignation": [
+                "COS-951",
+                "COS-753"
+            ],
+            "LACmaneuvers": "LAC-005",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-09-27",
+                "note": "Clima afectando el avance."
+            }
+        },
+        {
+            "activityCode": "ACT-006",
+            "startDate": "2024-09-30",
+            "endDate": "2024-10-01",
+            "activityType": "Expansión y Reposición",
+            "supports": "3116789",
+            "assets": "TRF-12346",
+            "user": {
+                "name": "Carlos",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "San Gil",
+            "description": "Reposición de postes en área urbana",
+            "status": "Finalizada vencida",
+            "priority": "Media",
+            "comments": "Se concluyó con retraso",
+            "OT": [
+                "OT-456",
+                "OT-852"
+            ],
+            "cosignation": [
+                "COS-963",
+                "COS-258"
+            ],
+            "LACmaneuvers": "LAC-006",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-09-30",
+                "note": "Se concluyó con éxito, pero fuera de plazo."
+            }
+        },
+        {
+            "activityCode": "ACT-007",
+            "startDate": "2024-10-02",
+            "endDate": "2024-10-03",
+            "activityType": "Mantenimiento",
+            "supports": "3115678",
+            "assets": "TRF-23456",
+            "user": {
+                "name": "Laura",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "Socorro",
+            "description": "Mantenimiento preventivo de transformadores",
+            "status": "En ejecución",
+            "priority": "Media",
+            "comments": "Avance del 60%",
+            "OT": [
+                "OT-321",
+                "OT-654"
+            ],
+            "cosignation": [
+                "COS-963",
+                "COS-159"
+            ],
+            "LACmaneuvers": "LAC-007",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-10-02",
+                "note": "El mantenimiento está progresando sin problemas."
+            }
+        },
+        {
+            "activityCode": "ACT-008",
+            "startDate": "2024-10-05",
+            "endDate": "2024-10-06",
+            "activityType": "Expansión y Reposición",
+            "supports": "3117890",
+            "assets": "TRF-89012",
+            "user": {
+                "name": "David",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "Barbosa",
+            "description": "Reposición de cables en áreas rurales",
+            "status": "Programada",
+            "priority": "Alta",
+            "comments": "Se espera iniciar en la fecha prevista",
+            "OT": [
+                "OT-852",
+                "OT-963"
+            ],
+            "cosignation": [
+                "COS-357",
+                "COS-753"
+            ],
+            "LACmaneuvers": "LAC-008",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-10-04",
+                "note": "Todo preparado para iniciar los trabajos."
+            }
+        },
+        {
+            "activityCode": "ACT-009",
+            "startDate": "2024-10-08",
+            "endDate": "2024-10-09",
+            "activityType": "Podas",
+            "supports": "3111234",
+            "assets": "TRF-34567",
+            "user": {
+                "name": "Sofía",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "San Alberto",
+            "description": "Podas de seguridad cerca de líneas eléctricas",
+            "status": "Finalizada",
+            "priority": "Baja",
+            "comments": "Se completó antes de lo previsto",
+            "OT": [
+                "OT-147",
+                "OT-258"
+            ],
+            "cosignation": [
+                "COS-789",
+                "COS-963"
+            ],
+            "LACmaneuvers": "LAC-009",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-10-10",
+                "note": "Las podas fueron completadas sin incidentes."
+            }
+        },
+        {
+            "activityCode": "ACT-010",
+            "startDate": "2024-10-12",
+            "endDate": "2024-10-14",
+            "activityType": "Mantenimiento Equipos",
+            "supports": "3114567",
+            "assets": "TRF-67890",
+            "user": {
+                "name": "Juan",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "San Gil",
+            "description": "Revisión de sistemas de refrigeración en subestación",
+            "status": "Vencida en ejecución",
+            "priority": "Alta",
+            "comments": "Atraso por falta de repuestos",
+            "OT": [
+                "OT-963",
+                "OT-147"
+            ],
+            "cosignation": [
+                "COS-159",
+                "COS-258"
+            ],
+            "LACmaneuvers": "LAC-010",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-10-14",
+                "note": "Pendiente recibir repuestos para completar."
+            }
+        },
+        {
+            "activityCode": "ACT-011",
+            "startDate": "2024-10-15",
+            "endDate": "2024-10-16",
+            "activityType": "Mantenimiento",
+            "supports": "3119876",
+            "assets": "TRF-12345",
+            "user": {
+                "name": "Marta",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "Socorro",
+            "description": "Mantenimiento de líneas de media tensión",
+            "status": "Vencida",
+            "priority": "Alta",
+            "comments": "Atraso por problemas técnicos",
+            "OT": [
+                "OT-654",
+                "OT-321"
+            ],
+            "cosignation": [
+                "COS-753",
+                "COS-159"
+            ],
+            "LACmaneuvers": "LAC-011",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-10-17",
+                "note": "Mantenimiento incompleto por problemas técnicos."
+            }
+        },
+        {
+            "activityCode": "ACT-012",
+            "startDate": "2024-10-18",
+            "endDate": "2024-10-19",
+            "activityType": "Expansión y Reposición",
+            "supports": "3123456",
+            "assets": "TRF-56789",
+            "user": {
+                "name": "Luis",
+                "photo": "https://img.freepik.com/psd-gratis/3d-ilustracion-persona-gafas-sol_23-2149436188.jpg"
+            },
+            "region": "Barbosa",
+            "description": "Instalación de nuevos transformadores",
+            "status": "Finalizada vencida",
+            "priority": "Media",
+            "comments": "Finalizado con retraso debido a problemas logísticos",
+            "OT": [
+                "OT-963",
+                "OT-852"
+            ],
+            "cosignation": [
+                "COS-654",
+                "COS-357"
+            ],
+            "LACmaneuvers": "LAC-012",
+            "pdf": "/assets/PDF/Ejemplo.pdf",
+            "lastUpdate": {
+                "date": "2024-10-20",
+                "note": "Instalación finalizada con éxito, aunque fuera del plazo."
+            }
+        }
+    ]
+}
